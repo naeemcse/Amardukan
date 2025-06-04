@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Amardukan.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Amardukan.Data
@@ -8,6 +9,10 @@ namespace Amardukan.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
+         
         }
+        public DbSet<Product> Products { get; set; } = null!;
+
     }
 }
