@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Amardukan.Models
 {
@@ -8,7 +9,7 @@ namespace Amardukan.Models
         [MaxLength(100)]
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero.")] 
+        [Precision(16,2), Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero.")] 
         public decimal Price { get; set; }
         [MaxLength(50)]
         public string Category { get; set; } = string.Empty;
